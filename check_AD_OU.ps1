@@ -56,15 +56,19 @@ if($array.count -gt $maxCrit)
 {
 	$state="CRITICAL"
 	$exitcode=2
-    $output="CRITICAL: Some PC present in Computers OU"
+    $output="CRITICAL: Some PC present in Computers OU : "
+    $List=Get-ADComputer -Filter * -SearchBase 'CN=Computers,DC=MYDOMAIN,DC=com' | Foreach-Object Name
     Write-Host $output
+    Write-Host $List
 }
 elseif($array.count -gt $maxWarn)
 {
 	$state="WARNING"
 	$exitcode=1
-    $output="WARNING: 1 PC present in Computers OU"
+    $output="WARNING: 1 PC present in Computers OU : "
+    $List=Get-ADComputer -Filter * -SearchBase 'CN=Computers,DC=MYDOMAIN,DC=com' | Foreach-Object Name
     Write-Host $output
+    Write-Host $List
 }
 else
 {
