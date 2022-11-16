@@ -1,5 +1,6 @@
 # ====================================================================
 # Search in AD for default OU computer. To be used through NRPE / nsclient++
+# Edited by @wetcoriginal
 # ====================================================================
 #
 # Require Set-ExecutionPolicy RemoteSigned.
